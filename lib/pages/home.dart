@@ -45,13 +45,16 @@ class Home extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.network(
-                'https://m.economictimes.com/thumb/msid-79457702,width-1200,height-900,resizemode-4,imgsize-264098/modi_address.jpg',
-                fit: BoxFit.cover,
-                width: MediaQuery.of(context).size.width/4,
-                height: MediaQuery.of(context).size.width/4,
+            Container(
+              width: MediaQuery.of(context).size.width/4,
+              height: MediaQuery.of(context).size.width/4,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                    image: NetworkImage('https://m.economictimes.com/thumb/msid-79457702,width-1200,height-900,resizemode-4,imgsize-264098/modi_address.jpg',
+                  ),
+                  fit: BoxFit.cover,
+                )
               ),
             ),
             SizedBox(width: 10),
@@ -76,7 +79,7 @@ class Home extends StatelessWidget {
                 Container(
                   width: 260,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Icon(
                         Icons.calendar_today_outlined,
